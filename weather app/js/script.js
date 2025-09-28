@@ -33,7 +33,7 @@ const fetchResult = async (targetLocation) => {
     let climateCondition = data.current.condition.text;
     console.log(climateCondition);
 
-    let climateConditionIcon = data.current.condition.icon; // <-- keep different name
+    let climateConditionIcon = data.current.condition.icon;
 
     updateResult(temprature, locationName, time, climateCondition, climateConditionIcon);
     
@@ -47,7 +47,7 @@ function updateResult(temprature, locationName, time, climateCondition, climateC
 
     let currentDay = getDayName(new Date(splitDate).getDay());
 
-    console.log(currentDay)    //it will basically comes in number not "monday" "tuesday" etc.. like this to get like that we use switch case
+    console.log(currentDay)    
 
     tempratureField.innerText = temprature;
 
@@ -57,7 +57,7 @@ function updateResult(temprature, locationName, time, climateCondition, climateC
 
     conditionField.innerText = climateCondition;
 
-    conditionIcon.src = "https:" + climateConditionIcon;  // ✅ use <img> element + prepend https:
+    conditionIcon.src = "https:" + climateConditionIcon;  
 
 }
 
@@ -65,7 +65,7 @@ function searchForLocation(e){
 
     e.preventDefault();
 
-    target = searchField.value;  //this target will get search area value for ex: if i give madurai it sets the target value to madurai and gives results based on the madurai.
+    target = searchField.value; 
 
     fetchResult(target);
 }
@@ -97,5 +97,6 @@ function getDayName(number) {
             return "Saturday";
 
      }
+
 
 }
